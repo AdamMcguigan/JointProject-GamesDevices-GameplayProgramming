@@ -116574,6 +116574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1584807082}
   animator: {fileID: 1584807078}
+  animatorFeet: {fileID: 1002765273}
   h: 0
   v: 0
   moveSpeed: 5

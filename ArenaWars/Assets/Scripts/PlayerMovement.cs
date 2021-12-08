@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb = new Rigidbody2D();          //<-- specifying rb as usual
     public Animator animator;
-
+    public Animator animatorFeet;
 
     public float h;     //horizontal float
     public float v;     //vertical float
@@ -39,10 +39,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             animator.SetFloat("speed", Mathf.Abs(moveSpeed));
+            animatorFeet.SetFloat("speed", Mathf.Abs(moveSpeed));
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {                   
-           animator.SetFloat("speed", Mathf.Abs(0));        
+           animator.SetFloat("speed", Mathf.Abs(0));
+           animatorFeet.SetFloat("speed", Mathf.Abs(0));
         }
 
 
@@ -50,10 +52,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             animator.SetFloat("speed", Mathf.Abs(moveSpeed));
+            animatorFeet.SetFloat("speed", Mathf.Abs(moveSpeed));
         }
         else if (Input.GetKeyUp(KeyCode.W))
         {
             animator.SetFloat("speed", Mathf.Abs(0));
+            animatorFeet.SetFloat("speed", Mathf.Abs(0));
         }
 
 
@@ -62,10 +66,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             animator.SetFloat("speed", Mathf.Abs(moveSpeed));
+            animatorFeet.SetFloat("speed", Mathf.Abs(moveSpeed));
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
             animator.SetFloat("speed", Mathf.Abs(0));
+            animatorFeet.SetFloat("speed", Mathf.Abs(0));
         }
 
 
@@ -74,10 +80,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             animator.SetFloat("speed", Mathf.Abs(moveSpeed));
+            animatorFeet.SetFloat("speed", Mathf.Abs(moveSpeed));
         }
         else if (Input.GetKeyUp(KeyCode.D))
         {
             animator.SetFloat("speed", Mathf.Abs(0));
+            animatorFeet.SetFloat("speed", Mathf.Abs(0));
         }
         //////////////////////////////////////// ////////////////////////////////////////
 

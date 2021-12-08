@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {   
     public Rigidbody2D rb = new Rigidbody2D();          //<-- specifying rb as usual
+
+   
     public float h;     //horizontal float
     public float v;     //vertical float
     public float moveSpeed = 5f;        //speed

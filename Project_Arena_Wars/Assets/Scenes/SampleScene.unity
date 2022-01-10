@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2582707151816603938, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582707151816603938, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582707151816603938, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 9144547177983540946, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -174,6 +186,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9144547177983540947, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5302055119148338792, guid: 5c286537a65db914da92ced7c9325b93, type: 3}
+    - target: {fileID: 9144547177983540947, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 703607594}
     - target: {fileID: 9144547177983540957, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
       propertyPath: m_SortingLayer
       value: 6
@@ -191,6 +211,11 @@ PrefabInstance:
 --- !u!1 &272646664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9144547177983540959, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
+  m_PrefabInstance: {fileID: 94831725}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &703607594 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2582707151816603938, guid: 8ef92ac8f5940ca4db55bfb1cf7dda03, type: 3}
   m_PrefabInstance: {fileID: 94831725}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1266240624
@@ -10321,7 +10346,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c033c2f4874e8bc46b9d9311f01869e0, type: 2}
+  - {fileID: 2100000, guid: 48f0040afbaf93e4d9c18901b9cccb5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

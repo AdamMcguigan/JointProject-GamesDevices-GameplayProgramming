@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb = new Rigidbody2D();          //<-- specifying rb as usual
     public Animator animator;
     public Animator animatorFeet;
+    public Transform firePoint;
+    public GameObject bullet;
 
     public float h;     //horizontal float
     public float v;     //vertical float
@@ -24,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetBool("shoot", true);
+
+            //make move bullet 
+            Instantiate(bullet, firePoint.position, firePoint.rotation);
+
         }
         else if (Input.GetMouseButtonUp(0))
         {

@@ -13,6 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public float h;     //horizontal float
     public float v;     //vertical float
     public float moveSpeed = 5f;        //speed
+
+
+
+    float speed = 10f;
+    public Transform firepoint;
+    public GameObject bulletPrefab;
     void Update()
     {
         h = Input.GetAxisRaw("Horizontal");     //checking input
@@ -26,9 +32,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetBool("shoot", true);
-
+            GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
             //make move bullet 
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
+          //  Instantiate(bullet, firePoint.position, firePoint.rotation);
 
         }
         else if (Input.GetMouseButtonUp(0))
@@ -113,9 +121,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
-     
         rb.velocity = new Vector2(h * moveSpeed, v * moveSpeed);    //making character move
+       
     }
 
 

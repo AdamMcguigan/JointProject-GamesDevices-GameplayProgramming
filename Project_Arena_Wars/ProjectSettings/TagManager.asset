@@ -6,6 +6,7 @@ TagManager:
   tags:
   - props
   - walls
+  - crosshair
   layers:
   - Default
   - TransparentFX
@@ -63,4 +64,7 @@ TagManager:
     locked: 0
   - name: Bullet
     uniqueID: 2189912303
+    locked: 0
+  - name: Enemy
+    uniqueID: 3041340265
     locked: 0

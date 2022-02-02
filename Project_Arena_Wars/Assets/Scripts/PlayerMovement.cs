@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         ////////////////////////////////////////Shooting
-        if (Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
             animator.SetBool("shoot", true);
             GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
           //  Instantiate(bullet, firePoint.position, firePoint.rotation);
 
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if(Input.GetMouseButtonUp(0))
         {
             animator.SetBool("shoot", false);
         }

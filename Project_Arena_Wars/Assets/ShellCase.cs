@@ -13,7 +13,7 @@ public class ShellCase : MonoBehaviour
 
     private float velocityTime;
     private float rotationSpeed = 400f;
-    private float offset = -2f;//-8.3f;
+    private float offset = 0f;//-8.3f;
 
     // Start is called before the first frame update
     void Start()

@@ -31,5 +31,10 @@ public class DestroyByContact : MonoBehaviour
             Debug.Log("Collided with walls ");
             Destroy(gameObject);
         }
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("HiT ThE EnEmY MaN ");
+            Destroy(gameObject);
+        }
     }
 }

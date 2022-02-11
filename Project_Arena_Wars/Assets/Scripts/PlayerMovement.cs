@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     float speed = 10f;
     public Transform firepoint;
     public GameObject bulletPrefab;
+
+    public GameObject shellCasing;
     void Update()
     {
         h = Input.GetAxisRaw("Horizontal");     //checking input
@@ -35,8 +37,9 @@ public class PlayerMovement : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
+            ejectShell();
             //make move bullet 
-          //  Instantiate(bullet, firePoint.position, firePoint.rotation);
+            //  Instantiate(bullet, firePoint.position, firePoint.rotation);
 
         }
         else if(Input.GetMouseButtonUp(0))
@@ -133,5 +136,18 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Reload", false);
     }
 
- 
+    private void ejectShell()
+    {
+        GameObject ejectShell = Instantiate(shellCasing, transform.position, Quaternion.identity);
+        float xVnot = Random.Range(5f, 10f);
+        float yVnot = Random.Range(5f, 10f);
+        if (!(firepoint.rotation.eulerAngles.z >= 90f && firepoint.rotation.eulerAngles.z < 270f))
+        {
+            xVnot *= -1;
+        }
+        ejectShell.GetComponent<ShellCase>().xVnot = xVnot;
+        ejectShell.GetComponent<ShellCase>().yVnot = yVnot;
+    }
+
+
 }

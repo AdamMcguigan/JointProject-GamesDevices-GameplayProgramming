@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,6 +22,17 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bulletPrefab;
 
     public GameObject shellCasing;
+    public GameObject muzzleFlash;
+
+    public int ammo;
+    public bool isFiring;
+    public Text ammoDislay;
+
+    void Start()
+    {
+        muzzleFlash.gameObject.SetActive(false);
+    }
+
     void Update()
     {
         h = Input.GetAxisRaw("Horizontal");     //checking input
@@ -29,22 +41,25 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
+        ammoDislay.text = ammo.ToString();
         ////////////////////////////////////////Shooting
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !isFiring && ammo > 0)
         {
             animator.SetBool("shoot", true);
             GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
             ejectShell();
-            //make move bullet 
-            //  Instantiate(bullet, firePoint.position, firePoint.rotation);
+            muzzleFlash.gameObject.SetActive(true);
+            isFiring = true;
+            ammo--;
+            isFiring = false;
 
         }
         else if(Input.GetMouseButtonUp(0))
         {
             animator.SetBool("shoot", false);
+            muzzleFlash.gameObject.SetActive(false);
         }
         //////////////////////////////////////// ////////////////////////////////////////
 
@@ -113,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("Reload", true);
             StartCoroutine(reload());
+            ammo = 30;
         }
 
 

@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isFiring;
     public Text ammoDislay;
 
+
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     void Start()
     {
         muzzleFlash.gameObject.SetActive(false);
@@ -45,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         ////////////////////////////////////////Shooting
         if(Input.GetMouseButtonDown(0) && !isFiring && ammo > 0)
         {
+            audioSource.PlayOneShot(audioClip,0.5f);
             animator.SetBool("shoot", true);
             GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -62,6 +66,27 @@ public class PlayerMovement : MonoBehaviour
             muzzleFlash.gameObject.SetActive(false);
         }
         //////////////////////////////////////// ////////////////////////////////////////
+        ///
+
+        //if (Input.GetMouseButton(0) && !isFiring && ammo > 0)
+        //{
+        //    animator.SetBool("shoot", true);
+        //    GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+        //    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        //    rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
+        //    ejectShell();
+        //    muzzleFlash.gameObject.SetActive(true);
+        //    isFiring = true;
+        //    ammo--;
+        //    isFiring = false;
+
+        //}
+        //else if (Input.GetMouseButtonUp(0))
+        //{
+        //    animator.SetBool("shoot", false);
+        //    muzzleFlash.gameObject.SetActive(false);
+        //}
+        ////////////////////////////////////////// ////////////////////////////////////////
 
 
 

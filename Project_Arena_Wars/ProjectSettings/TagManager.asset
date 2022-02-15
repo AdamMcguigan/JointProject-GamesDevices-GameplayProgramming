@@ -8,6 +8,7 @@ TagManager:
   - walls
   - crosshair
   - Enemy
+  - Site
   layers:
   - Default
   - TransparentFX
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: props
     uniqueID: 558326867
+    locked: 0
+  - name: BombSite
+    uniqueID: 3003221461
     locked: 0
   - name: feet
     uniqueID: 3586905661

@@ -20,6 +20,9 @@ public class enemy1Script : MonoBehaviour
     float theta;
     public bool allowShot = false;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +60,7 @@ public class enemy1Script : MonoBehaviour
             shootingTime = 2.0f;
 
 
-
+            audioSource.PlayOneShot(audioClip, 0.5f);
             GameObject bulletspawn = Instantiate(bullet, firePoint.position, firePoint.rotation);
             Rigidbody2D rbBullet = bulletspawn.GetComponent<Rigidbody2D>();
             rbBullet.AddForce(firePoint.up * speed, ForceMode2D.Impulse);

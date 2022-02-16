@@ -5,14 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   public void PlayGame()
+    public void StartGame()               //run start game void which should have loading game scene
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Debug.Log("startGame");
+        SceneManager.LoadScene("SampleScene");
     }
-
-    public void quitGame()
+    public void SettingsGame()            //run settings void which should have loading settings scene
     {
-        Debug.Log("Quiting Game ");
+        Debug.Log("Settings");
+        SceneManager.LoadScene("SettingsMenu");
+    }
+    public void BackGame()                //run back void which should go back to menu
+    {
+        Debug.Log("back");
+        SceneManager.LoadScene("Menu");
+    }
+    public void QuitGame()               //run settings void which should quit game
+    {
         Application.Quit();
+
+
+        //////////////////////////////////////////////////          <<<---- COMMENT THIS OUT BEFORE BUILDING THE PROJECT!!!!!
+
+        //UnityEditor.EditorApplication.isPlaying = false;          <<<---- COMMENT THIS OUT BEFORE BUILDING THE PROJECT!!!!!
+
+        //////////////////////////////////////////////////          <<<---- COMMENT THIS OUT BEFORE BUILDING THE PROJECT!!!!!
     }
 }

@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         ////////////////////////////////////////Shooting
         if(Input.GetMouseButtonDown(0) && !isFiring && ammo > 0)
         {
+           
             audioSource.PlayOneShot(audioClip,0.5f);
             animator.SetBool("shoot", true);
             GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);

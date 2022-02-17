@@ -36,5 +36,10 @@ public class DestroyByContact : MonoBehaviour
             Debug.Log("HiT ThE EnEmY MaN ");
             Destroy(gameObject);
         }
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Collided with the player");
+            Destroy(gameObject);
+        }
     }
 }

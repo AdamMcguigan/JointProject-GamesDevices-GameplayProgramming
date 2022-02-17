@@ -73,3 +73,6 @@ TagManager:
   - name: Enemy
     uniqueID: 3041340265
     locked: 0
+  - name: Shotgun Enemy
+    uniqueID: 927787861
+    locked: 0

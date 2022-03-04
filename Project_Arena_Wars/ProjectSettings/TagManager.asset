@@ -55,6 +55,18 @@ TagManager:
   - name: wall
     uniqueID: 799979761
     locked: 0
+  - name: above walls
+    uniqueID: 145768685
+    locked: 0
+  - name: ct Above
+    uniqueID: 1174513677
+    locked: 0
+  - name: 'ct above walls '
+    uniqueID: 3501733973
+    locked: 0
+  - name: ct above walls 2
+    uniqueID: 2499737693
+    locked: 0
   - name: props
     uniqueID: 558326867
     locked: 0

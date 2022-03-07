@@ -94,3 +94,6 @@ TagManager:
   - name: Shotgun Enemy
     uniqueID: 927787861
     locked: 0
+  - name: shadows
+    uniqueID: 3988687589
+    locked: 0

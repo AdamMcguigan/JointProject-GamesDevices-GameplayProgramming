@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Player stuff")]
     public Rigidbody2D rb = new Rigidbody2D();          //<-- specifying rb as usual
     public Animator animator;
     public Animator animatorFeet;
@@ -15,12 +16,11 @@ public class PlayerMovement : MonoBehaviour
     public float v;     //vertical float
     public float moveSpeed = 5f;        //speed
 
-
-
-    float speed = 10f;
+ 
+    [Header("Gun stuff")]
+    public float speed = 10f;
     public Transform firepoint;
     public GameObject bulletPrefab;
-
     public GameObject shellCasing;
     public GameObject muzzleFlash;
 
@@ -28,9 +28,10 @@ public class PlayerMovement : MonoBehaviour
     public bool isFiring;
     public Text ammoDislay;
 
-
+    [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip audioClip;
+
     void Start()
     {
         muzzleFlash.gameObject.SetActive(false);

@@ -46,11 +46,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: invisable layerwall
+    uniqueID: 3780986537
+    locked: 0
   - name: ground
     uniqueID: 2702052127
     locked: 0
   - name: ground2
     uniqueID: 213435899
+    locked: 0
+  - name: ground 3
+    uniqueID: 3818849517
     locked: 0
   - name: wall
     uniqueID: 799979761

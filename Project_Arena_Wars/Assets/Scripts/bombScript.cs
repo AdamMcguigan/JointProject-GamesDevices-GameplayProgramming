@@ -10,7 +10,7 @@ public class bombScript : MonoBehaviour
     public GameObject player;
     public GameObject BombsiteA;
     public GameObject BombsiteB;
-
+    public GameObject effectExplosion;
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI plantText;
     public TextMeshProUGUI bombPickupText;
@@ -71,6 +71,8 @@ public class bombScript : MonoBehaviour
         if (counter > timer)
         {
             Debug.Log("Add explosion shtuff");
+            Instantiate(effectExplosion, transform.position, transform.rotation);
+          //  CameraShake.instance.shakeCamera(2);
             boomTimer = false;
         }
     }

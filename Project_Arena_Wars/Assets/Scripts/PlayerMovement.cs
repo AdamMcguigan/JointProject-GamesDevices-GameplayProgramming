@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject shellCasing;
     public GameObject muzzleFlash;
+    public float fireRate;
+    private float shotCounter;
 
     public int ammo;
     public bool isFiring;
@@ -47,25 +49,32 @@ public class PlayerMovement : MonoBehaviour
 
         ammoDislay.text = ammo.ToString();
         ////////////////////////////////////////Shooting
-        if(Input.GetMouseButtonDown(0) && !isFiring && ammo > 0)
+        if(Input.GetMouseButton(0) && !isFiring && ammo > 0)
         {
-           
-            audioSource.PlayOneShot(audioClip,0.5f);
-            animator.SetBool("shoot", true);
-            GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
-            ejectShell();
-            muzzleFlash.gameObject.SetActive(true);
-            isFiring = true;
-            ammo--;
-            isFiring = false;
-
+            shotCounter -= Time.deltaTime;
+            if (shotCounter <= 0)
+            {
+                shotCounter = fireRate;
+                audioSource.PlayOneShot(audioClip, 0.5f);
+                animator.SetBool("shoot", true);
+                GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
+                ejectShell();
+                muzzleFlash.gameObject.SetActive(true);
+                isFiring = true;
+                ammo--;
+                isFiring = false;
+            }
         }
         else if(Input.GetMouseButtonUp(0))
         {
             animator.SetBool("shoot", false);
             muzzleFlash.gameObject.SetActive(false);
+        }
+        else
+        {
+            shotCounter = 0;
         }
         //////////////////////////////////////// ////////////////////////////////////////
         ///

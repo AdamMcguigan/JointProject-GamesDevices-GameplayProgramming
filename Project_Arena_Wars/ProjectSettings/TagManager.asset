@@ -9,6 +9,7 @@ TagManager:
   - crosshair
   - Enemy
   - Site
+  - Bombsite
   layers:
   - Default
   - TransparentFX

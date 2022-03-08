@@ -28,7 +28,7 @@ public class CameraShake : MonoBehaviour
 
     void Start()
     {
-        originalCameraPos = cameraTransform.localPosition;
+       
     }
 
     public void shakeCamera(float _shakeDuration)
@@ -39,6 +39,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
+        originalCameraPos = cameraTransform.localPosition;
         if (shakeDuration > 0)
         {
             cameraTransform.localPosition = originalCameraPos + Random.insideUnitSphere * shakeAmount;

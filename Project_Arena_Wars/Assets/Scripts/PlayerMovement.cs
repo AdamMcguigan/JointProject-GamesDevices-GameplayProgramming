@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
             shotCounter -= Time.deltaTime;
             if (shotCounter <= 0)
             {
+                CameraShake.instance.shakeCamera(0.2f); ///<---------------- comment this out (left it in for now)
                 shotCounter = fireRate;
                 audioSource.PlayOneShot(audioClip, 0.5f);
                 animator.SetBool("shoot", true);

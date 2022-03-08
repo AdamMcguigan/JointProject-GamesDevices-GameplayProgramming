@@ -72,7 +72,7 @@ public class bombScript : MonoBehaviour
         {
             Debug.Log("Add explosion shtuff");
             Instantiate(effectExplosion, transform.position, transform.rotation);
-          //  CameraShake.instance.shakeCamera(2);
+            CameraShake.instance.shakeCamera(1.8f);
             boomTimer = false;
         }
     }

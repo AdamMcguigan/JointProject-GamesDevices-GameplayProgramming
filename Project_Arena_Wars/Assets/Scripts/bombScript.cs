@@ -11,6 +11,7 @@ public class bombScript : MonoBehaviour
     public GameObject BombsiteA;
     public GameObject BombsiteB;
     public GameObject effectExplosion;
+    public EnemyInstantiation EI;
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI plantText;
     public TextMeshProUGUI bombPickupText;
@@ -29,6 +30,11 @@ public class bombScript : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (planted)
+        {
+            EI.gameObject.SetActive(true);
+            planted = false;
+        }
         //If pickup == true and player presses E, then the player will pickup the bomb.
         if (collidedPickup == true && Input.GetKey(KeyCode.E) && planted == false)
         {

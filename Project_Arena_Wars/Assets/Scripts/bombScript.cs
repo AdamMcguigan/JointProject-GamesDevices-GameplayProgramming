@@ -32,7 +32,7 @@ public class bombScript : MonoBehaviour
         //If pickup == true and player presses E, then the player will pickup the bomb.
         if (collidedPickup == true && Input.GetKey(KeyCode.E) && planted == false)
         {
-            
+
             gameObject.transform.SetParent(player.transform);
             gameObject.transform.position = player.transform.position + new Vector3(-0.5f, -0.6f, 0f);
             bombPickupText.gameObject.SetActive(false);

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class enemy2Scrpit : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public Animator animator;
+    public static int lives = 3;
     // Start is called before the first frame update
     void Start()
     {

@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Site
   - Bombsite
+  - Shotgun Enemy
+  - Knife Enemy
   layers:
   - Default
   - TransparentFX

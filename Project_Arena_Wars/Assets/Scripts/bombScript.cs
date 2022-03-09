@@ -22,7 +22,7 @@ public class bombScript : MonoBehaviour
     float plantTimer = 3.0f;
     bool collidedPickup = false;
     bool planting = false;
-    bool startTimer = false;
+    public bool startTimer = false;
     bool planted = false;
     bool boomTimer = false;
 

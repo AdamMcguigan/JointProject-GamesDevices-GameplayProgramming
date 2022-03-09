@@ -6,28 +6,34 @@ using TMPro;
 
 public class enemy1Script : MonoBehaviour
 {
+    [Header("Vision Cone stuff")]
     public Rigidbody2D rb;
     public GameObject directionCircle;
     public Transform leftPosition;
     public Transform rightPosition;
-    public GameObject player;
     public PlayerMovement playerSpeed;
     public Transform firePoint;
     public GameObject bullet;
+    public GameObject player;
+
+    [Header("Gun stuff")]
     public float speed = 18.0f;
     float shootingTime;
     float gameTime = 10.0f;
     float theta;
     public bool allowShot = false;
 
+    [Header("Audio stuff")]
     public AudioSource audioSource;
     public AudioClip audioClip;
+
+    public static int lives = 3;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-    
+        
 
     }
 

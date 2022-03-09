@@ -38,6 +38,11 @@ public class DestroyByContact : MonoBehaviour
         {
             Debug.Log("HiT ThE EnEmY MaN ");
             enemy1Script.lives--;
+            if (enemy1Script.lives <= 0)
+            {
+                //Destroy(collision.gameObject);
+                collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
+            }
             Destroy(gameObject);
         }
 
@@ -45,6 +50,12 @@ public class DestroyByContact : MonoBehaviour
         {
             Debug.Log("HiT The Knife man ");
             enemy2Scrpit.lives--;
+
+            if (enemy2Scrpit.lives <= 0)
+            {
+                //Destroy(collision.gameObject);
+                collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
+            }
             Destroy(gameObject);
         }
 
@@ -52,6 +63,12 @@ public class DestroyByContact : MonoBehaviour
         {
             Debug.Log("HiT The shotgun man ");
             ShotgunEnemy.lives--;
+
+            if (ShotgunEnemy.lives <= 0)
+            {
+                //Destroy(collision.gameObject);
+                collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
+            }
             Destroy(gameObject);
         }
 
@@ -61,22 +78,5 @@ public class DestroyByContact : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (enemy1Script.lives <= 0)
-        {
-            //Destroy(collision.gameObject);
-            collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
-        }
-
-        if (enemy2Scrpit.lives <= 0)
-        {
-            //Destroy(collision.gameObject);
-            collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
-        }
-
-        if (ShotgunEnemy.lives <= 0)
-        {
-            //Destroy(collision.gameObject);
-            collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
-        }
     }
 }

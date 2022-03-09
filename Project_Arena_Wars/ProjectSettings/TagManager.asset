@@ -12,6 +12,7 @@ TagManager:
   - Bombsite
   - Shotgun Enemy
   - Knife Enemy
+  - Hostage
   layers:
   - Default
   - TransparentFX

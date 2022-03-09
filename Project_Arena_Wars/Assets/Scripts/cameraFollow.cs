@@ -14,6 +14,7 @@ public class cameraFollow : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+	
 		targetPos = transform.position;
 	}
 

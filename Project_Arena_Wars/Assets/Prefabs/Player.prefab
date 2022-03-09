@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 3721145916879060063}
   - component: {fileID: 3721145916879060062}
   - component: {fileID: 3721145916879060054}
+  - component: {fileID: 85873490002073153}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -540,6 +541,7 @@ MonoBehaviour:
   animatorFeet: {fileID: 3721145916759863151}
   firePoint: {fileID: 3721145916269504319}
   bullet: {fileID: 5302055119148338792, guid: 5c286537a65db914da92ced7c9325b93, type: 3}
+  restart: {fileID: 0}
   h: 0
   v: 0
   moveSpeed: 5
@@ -756,3 +758,15 @@ MonoBehaviour:
   forceToThrow: 10
   firePoint: {fileID: 3721145916269504319}
   grenadePrefab: {fileID: 3470285605779690760, guid: dbc77d0edabfe77478c8593cb4d50451, type: 3}
+--- !u!114 &85873490002073153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721145916879060061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7904f5199363a24f9d453729b334b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

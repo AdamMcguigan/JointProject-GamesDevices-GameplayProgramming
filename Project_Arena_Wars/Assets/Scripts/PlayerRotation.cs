@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
-    
+    private void Start()
+    {
+        Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 dir = Input.mousePosition - pos;
+    }
     void Update()
     {
         

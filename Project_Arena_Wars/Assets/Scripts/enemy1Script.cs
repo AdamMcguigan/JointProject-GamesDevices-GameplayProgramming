@@ -77,8 +77,6 @@ public class enemy1Script : MonoBehaviour
         }
         shootingTime -= Time.deltaTime;
     }
-
-
     void angleVisionCone()
     {
         Vector2 enemyDirection = directionCircle.transform.position - this.transform.position;

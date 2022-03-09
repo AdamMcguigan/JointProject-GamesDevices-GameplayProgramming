@@ -7,6 +7,11 @@ public class DestroyByContact : MonoBehaviour
 
     public static DestroyByContact instance;
 
+  
+    [Header("Particle")]
+    public GameObject particle;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +46,9 @@ public class DestroyByContact : MonoBehaviour
             if (enemy1Script.lives <= 0)
             {
                 //Destroy(collision.gameObject);
-                collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
+                Destroy(collision.gameObject); //collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
+                Instantiate(particle, transform.position, transform.rotation);
+              
             }
             Destroy(gameObject);
         }
@@ -55,6 +62,7 @@ public class DestroyByContact : MonoBehaviour
             {
                 //Destroy(collision.gameObject);
                 collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
+                Instantiate(particle, transform.position, transform.rotation);
             }
             Destroy(gameObject);
         }
@@ -68,12 +76,14 @@ public class DestroyByContact : MonoBehaviour
             {
                 //Destroy(collision.gameObject);
                 collision.gameObject.transform.position = new Vector3(1000, 1000, 1000);
+                Instantiate(particle, transform.position, transform.rotation);
             }
             Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "Player")
         {
+            Instantiate(particle, transform.position, transform.rotation);
             Debug.Log("Collided with the player");
             Destroy(gameObject);
         }

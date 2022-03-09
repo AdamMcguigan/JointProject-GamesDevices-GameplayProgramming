@@ -77,6 +77,9 @@ public class PlayerMovement : MonoBehaviour
         {
             shotCounter = 0;
         }
+
+
+
         //////////////////////////////////////// ////////////////////////////////////////
         ///
 
@@ -201,6 +204,5 @@ public class PlayerMovement : MonoBehaviour
         ejectShell.GetComponent<ShellCase>().xVnot = xVnot;
         ejectShell.GetComponent<ShellCase>().yVnot = yVnot;
     }
-
 
 }

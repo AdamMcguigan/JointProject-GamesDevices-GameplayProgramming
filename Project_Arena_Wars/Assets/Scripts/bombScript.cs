@@ -12,6 +12,9 @@ public class bombScript : MonoBehaviour
     public GameObject BombsiteB;
     public GameObject effectExplosion;
     public EnemyInstantiation EI;
+
+
+
     public TextMeshProUGUI objectiveText;
     public TextMeshProUGUI plantText;
     public TextMeshProUGUI bombPickupText;
@@ -19,7 +22,7 @@ public class bombScript : MonoBehaviour
 
 
     float counter = 0.0f;
-    float timer = 10.0f;
+    float timer = 46.0f;
     float plantTimer = 3.0f;
     bool collidedPickup = false;
     bool planting = false;
@@ -27,12 +30,20 @@ public class bombScript : MonoBehaviour
     bool planted = false;
     bool boomTimer = false;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
+
 
     private void FixedUpdate()
     {
         if (planted)
         {
+            
             EI.gameObject.SetActive(true);
+          
+
             planted = false;
         }
         //If pickup == true and player presses E, then the player will pickup the bomb.
@@ -51,8 +62,10 @@ public class bombScript : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && planting == true)
         {
             startTimer = true;
+          
+
         }
-        if(Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.F))
         {
             bombPickupText.gameObject.SetActive(true);
             objectiveText.SetText("Objective: \n" +
@@ -73,6 +86,7 @@ public class bombScript : MonoBehaviour
     }
     void startBoomTimer()
     {
+       
         counter += Time.deltaTime;
         if (counter > timer)
         {
@@ -95,6 +109,7 @@ public class bombScript : MonoBehaviour
             collidedPickup = false;
             transform.parent = null;
             plantText.SetText("Bomb Planted!");
+            audioSource.PlayOneShot(audioClip, 0.8f);
             startTimer = false;
             boomTimer = true;
         }

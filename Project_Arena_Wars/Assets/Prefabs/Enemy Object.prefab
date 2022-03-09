@@ -311,10 +311,10 @@ MonoBehaviour:
   directionCircle: {fileID: 7763286441615439251}
   leftPosition: {fileID: 7763286442031368325}
   rightPosition: {fileID: 7763286442820061351}
-  player: {fileID: 3721145916879060061, guid: 8e9165627916dd94d9f986e14a754e2d, type: 3}
   playerSpeed: {fileID: 3721145916879060049, guid: 8e9165627916dd94d9f986e14a754e2d, type: 3}
   firePoint: {fileID: 7763286443262411516}
   bullet: {fileID: 5302055119148338792, guid: 5c286537a65db914da92ced7c9325b93, type: 3}
+  player: {fileID: 3721145916879060061, guid: 8e9165627916dd94d9f986e14a754e2d, type: 3}
   speed: 2
   allowShot: 0
   audioSource: {fileID: 7763286441856843707}
@@ -487,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7763286442155843683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.43, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7763286441856843703}

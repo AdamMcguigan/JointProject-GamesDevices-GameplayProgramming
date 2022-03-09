@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class movement : MonoBehaviour
 {
 	public static movement instance;
@@ -26,7 +26,8 @@ public class movement : MonoBehaviour
 		if (hostageExtracted == true && Input.GetKey("E"))
         {
 			Debug.Log("Put endscreen here");
-        }
+			SceneManager.LoadScene("EndScreen");
+		}
 
 		if (drag == true)
 		{

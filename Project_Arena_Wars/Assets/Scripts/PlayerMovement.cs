@@ -53,10 +53,6 @@ public class PlayerMovement : MonoBehaviour
         if (lives <= 0)
         {
             restart.gameObject.SetActive(true);
-            if (Input.GetKey(KeyCode.R))
-            {         
-                SceneManager.LoadScene("Menu");
-            }
         }
         
 

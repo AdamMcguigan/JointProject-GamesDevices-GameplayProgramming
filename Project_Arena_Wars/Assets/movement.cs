@@ -9,7 +9,7 @@ public class movement : MonoBehaviour
 	private Rigidbody2D myRigidbody;    // Reference to the GameObject's Rigidbody2D
 	private bool wasKinematic;          // Flag indicating whether or not the Ridigbody
 	public GameObject player;
-	Vector2 speed = new Vector2(-3f,0.0f);
+	Vector2 speed = new Vector2(-0.4f,0.0f);
 	public bool hostageTaken = false;
 	bool hostageExtracted = false;
 
@@ -21,12 +21,12 @@ public class movement : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	void FixedUpdate()
 	{
-		if (hostageExtracted == true && Input.GetKey("E"))
+		if (hostageExtracted == true && Input.GetKey(KeyCode.E))
         {
 			Debug.Log("Put endscreen here");
-			SceneManager.LoadScene("EndScreen");
+			SceneManager.LoadScene("plant");
 		}
 
 		if (drag == true)

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,10 +13,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator animatorFeet;
     public Transform firePoint;
     public GameObject bullet;
+    public TextMeshProUGUI restart;
 
     public float h;     //horizontal float
     public float v;     //vertical float
     public float moveSpeed = 5f;        //speed
+    public static short lives = 5;
 
  
     [Header("Gun stuff")]
@@ -37,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         muzzleFlash.gameObject.SetActive(false);
+        restart.gameObject.SetActive(false);
+        lives = 5;
     }
 
     void Update()
@@ -44,7 +50,15 @@ public class PlayerMovement : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");     //checking input
         v = Input.GetAxisRaw("Vertical");       //checking input
 
-
+        if (lives <= 0)
+        {
+            restart.gameObject.SetActive(true);
+            if (Input.GetKey(KeyCode.R))
+            {         
+                SceneManager.LoadScene("Menu");
+            }
+        }
+        
 
 
         ammoDislay.text = ammo.ToString();

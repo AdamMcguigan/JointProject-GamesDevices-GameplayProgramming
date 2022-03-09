@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using TMPro;
 using System;
@@ -20,15 +21,17 @@ public class bombScript : MonoBehaviour
     public TextMeshProUGUI bombPickupText;
     public TextMeshProUGUI plantingBombText;
 
-
+    float newCounter = 0.0f;
     float counter = 0.0f;
-    float timer = 46.0f;
+    float timer = 46.5f;
+    float anotherTimer = 5.0f;
     float plantTimer = 3.0f;
     bool collidedPickup = false;
     bool planting = false;
     public bool startTimer = false;
     bool planted = false;
     bool boomTimer = false;
+    bool triggerNewSceneTimer = false;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -40,7 +43,8 @@ public class bombScript : MonoBehaviour
     {
         if (planted)
         {
-            
+            objectiveText.SetText("Objective: \n" +
+                "   Defend the Bomb!");
             EI.gameObject.SetActive(true);
           
 
@@ -82,8 +86,23 @@ public class bombScript : MonoBehaviour
         {
             startBoomTimer();
         }
+        if (triggerNewSceneTimer)
+        {
+            newTimerForEndScene();
+        }
         
     }
+    void newTimerForEndScene()
+    {
+
+        newCounter += Time.deltaTime;
+        if (newCounter > anotherTimer)
+        {
+            triggerNewSceneTimer = false;
+            SceneManager.LoadScene("EndScreen");       
+        }
+    }
+
     void startBoomTimer()
     {
        
@@ -94,6 +113,7 @@ public class bombScript : MonoBehaviour
             Instantiate(effectExplosion, transform.position, transform.rotation);
             CameraShake.instance.shakeCamera(1.8f);
             boomTimer = false;
+            triggerNewSceneTimer = true;
         }
     }
     void startPlantTimer()

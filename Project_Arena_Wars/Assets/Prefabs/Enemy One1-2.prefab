@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 0}
+  target: {fileID: 3721145916879060053, guid: 8e9165627916dd94d9f986e14a754e2d, type: 3}
 --- !u!114 &40851345224913726
 MonoBehaviour:
   m_ObjectHideFlags: 0

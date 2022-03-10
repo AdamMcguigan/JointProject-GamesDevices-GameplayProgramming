@@ -61,36 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
         ammoDislay.text = ammo.ToString();
         ////////////////////////////////////////Shooting
-        if(Input.GetMouseButton(0) && !isFiring && ammo > 0)
-        {
-            shotCounter -= Time.deltaTime;
-            if (shotCounter <= 0)
-            {
-                //CameraShake.instance.shakeCamera(0.2f); ///<---------------- comment this out (left it in for now)
-                shotCounter = fireRate;
-                audioSource.PlayOneShot(audioClip, 0.5f);
-                animator.SetBool("shoot", true);
-                GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-                rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
-                ejectShell();
-                muzzleFlash.gameObject.SetActive(true);
-                isFiring = true;
-                ammo--;
-                isFiring = false;
-            }
-        }
-        else if(Input.GetMouseButtonUp(0))
-        {
-            animator.SetBool("shoot", false);
-            muzzleFlash.gameObject.SetActive(false);
-        }
-        else
-        {
-            shotCounter = 0;
-        }
 
-
+        shooting();
 
         //////////////////////////////////////// ////////////////////////////////////////
         ///
@@ -198,7 +170,37 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-
+    public void shooting()
+    {
+        if (Input.GetMouseButton(0) && !isFiring && ammo > 0)
+        {
+            shotCounter -= Time.deltaTime;
+            if (shotCounter <= 0)
+            {
+                //CameraShake.instance.shakeCamera(0.2f); ///<---------------- comment this out (left it in for now)
+                shotCounter = fireRate;
+                audioSource.PlayOneShot(audioClip, 0.5f);
+                animator.SetBool("shoot", true);
+                GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(firepoint.up * speed, ForceMode2D.Impulse);
+                ejectShell();
+                muzzleFlash.gameObject.SetActive(true);
+                isFiring = true;
+                ammo--;
+                isFiring = false;
+            }
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            animator.SetBool("shoot", false);
+            muzzleFlash.gameObject.SetActive(false);
+        }
+        else
+        {
+            shotCounter = 0;
+        }
+    }
     IEnumerator reload()
     {
 

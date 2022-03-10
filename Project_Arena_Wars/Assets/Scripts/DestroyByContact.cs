@@ -10,6 +10,7 @@ public class DestroyByContact : MonoBehaviour
   
     [Header("Particle")]
     public GameObject particle;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -84,7 +85,7 @@ public class DestroyByContact : MonoBehaviour
         {
             PlayerMovement.lives--;
             Instantiate(particle, transform.position, transform.rotation);
-            Debug.Log("Collided with the player");
+            Debug.Log("Collided with the player");    
             Destroy(gameObject);
         }
 

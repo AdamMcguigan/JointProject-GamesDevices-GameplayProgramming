@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip audioClip;
 
+
+
     void Start()
     {
         muzzleFlash.gameObject.SetActive(false);
@@ -122,6 +124,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("speed", Mathf.Abs(moveSpeed));
             animatorFeet.SetFloat("speed", Mathf.Abs(moveSpeed));
+           
         }
         else if (Input.GetKeyUp(KeyCode.A))
         {                   
@@ -168,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("speed", Mathf.Abs(0));
             animatorFeet.SetFloat("speed", Mathf.Abs(0));
+
         }
         //////////////////////////////////////// ////////////////////////////////////////
 

@@ -19,11 +19,11 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        _rigidBody.velocity = new Vector3(_joystick.Horizontal * _moveSpeed, _rigidBody.velocity.y, _joystick.Vertical * _moveSpeed);
+        //_rigidBody.velocity = new Vector3(_joystick.Horizontal * _moveSpeed, _rigidBody.velocity.y, _joystick.Vertical * _moveSpeed);
 
-        if(_joystick.Horizontal != 0 || _joystick.Vertical != 0)
-        {
-            transform.rotation = Quaternion.LookRotation(_rigidBody.velocity);
-        }
+        //if(_joystick.Horizontal != 0 || _joystick.Vertical != 0)
+        //{
+        //    transform.rotation = Quaternion.LookRotation(_rigidBody.velocity);
+        //}
     }
 }

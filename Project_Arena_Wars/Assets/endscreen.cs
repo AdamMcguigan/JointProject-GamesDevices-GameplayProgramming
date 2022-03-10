@@ -9,10 +9,12 @@ public class endscreen : MonoBehaviour
     public saveObject so;
     Animator animator;
     public Text scoreText;
+    public Text prevScore;
     private void Start()
     {
         so = SaveManager.load();
         scoreText.text = "Score: " + so.score.ToString();
+        prevScore.text = "Prev Score: " + so.score.ToString();
         StartCoroutine(Endscreen());
     }
 
